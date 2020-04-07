@@ -16,7 +16,22 @@ def vowels(given_string):
 
 
 def perfect_power(number):
-    pass
+    perf_powers = [1]
+    candidate = 4
+    while len(perf_powers) < number:
+        done = False
+        for i in range(2, candidate // 2 + 1):
+            if candidate % i == 0:
+                check = candidate / i
+                while check % i == 0 and check > 1:
+                    check = check / i
+                    if check == 1:
+                        perf_powers.append(candidate)
+                        done = True
+            if done:
+                break
+        candidate += 1
+    print(perf_powers[-1])
 
 
 def lazy(number):
