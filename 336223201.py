@@ -7,7 +7,7 @@ PARSER.add_argument('--arg', type=str, dest='arg')
 ARG = PARSER.parse_args()
 
 
-def vowels(given_string):
+def vowels(given_string: str):
     count = 0
     for i in given_string.lower():
         if i in ['a', 'o', 'u', 'i', 'y', 'e']:
@@ -15,7 +15,7 @@ def vowels(given_string):
     print(count)
 
 
-def perfect_power(number):
+def perfect_power(number: int):
     perf_powers = [1]
     candidate = 4
     while len(perf_powers) < number:
@@ -34,7 +34,7 @@ def perfect_power(number):
     print(perf_powers[-1])
 
 
-def lazy(number):
+def lazy(number: int):
     print(sum(range(number + 1))+1)
 
 
