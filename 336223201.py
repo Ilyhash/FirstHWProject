@@ -1,7 +1,7 @@
 import argparse
 
-PARSER = argparse.ArgumentParser()
-PARSER.add_argument('--task', type=str, dest='task', default='vowels')
+PARSER = argparse.ArgumentParser('function assignment')
+PARSER.add_argument('--task', type=str, dest='task')
 PARSER.add_argument('--arg', type=str, dest='arg')
 
 ARG = PARSER.parse_args()
@@ -15,9 +15,10 @@ def vowels(given_string: str):
     print(count)
 
 
-def perfect_power(number: int):
+def perfect_power(num: int):
     perf_powers = [1]
     candidate = 4
+    number = int(num)
     while len(perf_powers) < number:
         done = False
         for i in range(2, candidate // 2 + 1):
