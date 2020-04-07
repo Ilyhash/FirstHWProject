@@ -36,7 +36,7 @@ def perfect_power(num: int):
 
 
 def lazy(number: int):
-    print(sum(range(number + 1))+1)
+    print(sum(range(int(number)))+1)
 
 
 if ARG.task == 'vowels':
