@@ -21,7 +21,8 @@ def perfect_power(num: int):
     number = int(num)
     while len(perf_powers) < number:
         done = False
-        for i in range(2, candidate // 2 + 1):
+        i = 2
+        while i ** 2 <= candidate:
             if candidate % i == 0:
                 check = candidate / i
                 while check % i == 0 and check > 1:
@@ -29,6 +30,7 @@ def perfect_power(num: int):
                     if check == 1:
                         perf_powers.append(candidate)
                         done = True
+            i += 1
             if done:
                 break
         candidate += 1
